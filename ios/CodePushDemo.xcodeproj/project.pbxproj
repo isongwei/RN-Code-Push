@@ -588,6 +588,11 @@
 			attributes = {
 				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = MHN2XFC72U;
+					};
+				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "CodePushDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -995,9 +1000,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODEPUSH_KEY = "BZRXrW3uEASGsNQFkMb8-u3wMz1A64db34c3-9931-4b86-8104-001a2ebb4b64";
+				CODEPUSH_KEY = KhI1pu8CGnT7KPMBQBJo4dCGEa9BuTIOdGA9o;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = MHN2XFC72U;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
@@ -1013,6 +1019,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zsw.zsw;
 				PRODUCT_NAME = CodePushDemo;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1022,8 +1029,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODEPUSH_KEY = "_3UqQiRuX7oBgq0K44uNZiv09UJK64db34c3-9931-4b86-8104-001a2ebb4b64";
+				CODEPUSH_KEY = KhI1pu8CGnT7KPMBQBJo4dCGEa9BuTIOdGA9o;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MHN2XFC72U;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
@@ -1039,6 +1047,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zsw.zsw;
 				PRODUCT_NAME = CodePushDemo;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1159,8 +1168,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODEPUSH_KEY = "BZRXrW3uEASGsNQFkMb8-u3wMz1A64db34c3-9931-4b86-8104-001a2ebb4b64";
+				CODEPUSH_KEY = KhI1pu8CGnT7KPMBQBJo4dCGEa9BuTIOdGA9o;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MHN2XFC72U;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
@@ -1176,6 +1186,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zsw.zsw;
 				PRODUCT_NAME = CodePushDemo;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
