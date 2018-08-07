@@ -6,70 +6,52 @@
  * @flow
  */
 
-import React, {
-  Component,
-
-
-} from 'react';
+import React, { Component } from "react";
 import {
   Platform,
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
-} from 'react-native';
+  TouchableOpacity,
+  Button
+} from "react-native";
 
-
-import CodePush from 'react-native-code-push';
+import CodePush from "react-native-code-push";
 
 const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
+  android:
+    "Double tap R on your keyboard to reload,\n" +
+    "Shake or press menu button for dev menu"
 });
 
-type Props = {};
+const key = "q8ODH3dKbywnzVkS8mCvineZ9XJs64db34c3-9931-4b86-8104-001a2ebb4b64";
 
-const key = 'KhI1pu8CGnT7KPMBQBJo4dCGEa9BuTIOdGA9o';
-
-
-
-export default class App extends Component < Props > {
-
-
-
+export default class App extends Component {
   constructor(props) {
+    console.disableYellowBox = true;  
     super(props);
     this.state = {
-
-      des: 'NONE'
-    }
-
+      des: "NONE"
+    };
   }
 
-
-
   componentWillMount() {
-    CodePush.disallowRestart()
-    this.syncImmediate1()
+    CodePush.disallowRestart();
+    this.syncImmediate1();
   }
 
   componentDidMount() {
-    CodePush.allowRestart()
+    CodePush.allowRestart();
   }
   syncImmediate1() {
-    CodePush.checkForUpdate(key).then((update) => {
-      console.log('-------' + JSON.stringify(update))
-      if (!update) {
-        console.log('已是最新版本！')
-      } else {
-        this.setState({
-          des: JSON.stringify(update)
-
-        })
-        alert('有更新')
-      }
-    })
+    CodePush.checkForUpdate(key).then(update => {
+      console.log("-------" + JSON.stringify(update));
+      this.setState({
+        des: JSON.stringify(update)
+      });
+    
+    });
   }
 
   //如果有更新的提示
@@ -91,54 +73,47 @@ export default class App extends Component < Props > {
         //强制更新时的信息. 默认为"An update is available that must be installed."
         mandatoryUpdateMessage: "必须更新后才能使用",
         //非强制更新时，按钮文字,默认为"ignore"
-        optionalIgnoreButtonLabel: '稍后',
+        optionalIgnoreButtonLabel: "稍后",
         //非强制更新时，确认按钮文字. 默认为"Install"
-        optionalInstallButtonLabel: '后台更新',
+        optionalInstallButtonLabel: "后台更新",
         //非强制更新时，检查到更新的消息文本
-        optionalUpdateMessage: '有新版本了，是否更新？',
+        optionalUpdateMessage: "有新版本了，是否更新？",
         //Alert窗口的标题
-        title: '更新提示'
-      },
-    }, );
+        title: "更新提示"
+      }
+    });
   }
 
-
-
   render() {
-    return (
-      <View style={styles.container}>
-      <TouchableOpacity onPress = {()=>{this.syncImmediate1()}}>
+    return <View style={styles.container}>
+        <View style={{ flex: 2, justifyContent: "center" }}>
+          <Button title="检查更新" onPress={() => {
+              this.syncImmediate1();
+            }} />
+        </View>
+        <View style={{ flex: 1 }}>
+          <Button title="下载检查" onPress={() => {
+              this.syncImmediate2();
+            }} />
+        </View>
+        <View style={{ flex: 8 }}>
+
         <Text>
-          button
+          {this.state.des}
         </Text>
-        </TouchableOpacity>    
-          <Text style={styles.welcome}>{this.state.des}</Text>
-        <TouchableOpacity
-          onPress = {()=>{
-          this.syncImmediate2();
-        }} >
-          <Text>马上更新</Text>
-        </TouchableOpacity>
-      </View>
-    );
+        </View>
+        <Text>
+这是最新的1.0.6版本
+        </Text>
+      </View>;
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF"
+  }
 });
