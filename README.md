@@ -177,6 +177,8 @@ Successfully released an update containing the "/var/folders/g5/f8hqh2bn3dl99425
 
 #查看发布的历史记录：
 code-push deployment history MyProjectIOS Staging
+
+针对回滚情况 似乎再发一版会有更新
 ```
 
 相关参数
